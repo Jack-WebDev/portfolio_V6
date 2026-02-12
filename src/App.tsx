@@ -59,7 +59,7 @@ export default function App() {
         <div className="mt-4 flex items-center space-x-3 overflow-hidden">
           <div className="h-px w-12 bg-[#D4C4A8] animate-width-reveal"></div>
           <p className="text-[8px] font-bold tracking-[1em] text-white/40 uppercase">
-            System Initializing
+            Initializing
           </p>
         </div>
       </div>
@@ -201,8 +201,8 @@ export default function App() {
                   part of our core architecture.
                 </p>
                 <p>
-                  Outside of code, I’m interested in digital minimalism,
-                  philosophy, and the arts.
+                  Beyond coding, I’m drawn to digital minimalism, philosophy,
+                  art, and anime.
                 </p>
               </div>
             </section>
@@ -272,48 +272,56 @@ export default function App() {
               <ul className="group/list space-y-12">
                 {PROJECTS.map((project, i) => (
                   <li key={i}>
-                    <div className="group relative grid gap-4 pb-1 transition-all sm:grid-cols-8 sm:gap-8 md:gap-4 lg:hover:opacity-100! lg:group-hover/list:opacity-50">
-                      <div className="absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-md transition lg:-inset-x-6 lg:block lg:group-hover:bg-slate-200/50 dark:lg:group-hover:bg-[#ffffff03] lg:group-hover:shadow-[inset_0_1px_0_0_rgba(255,255,255,0.05)]"></div>
-                      <div className="z-10 sm:order-2 sm:col-span-6">
-                        <h3>
-                          <a
-                            className="inline-flex items-baseline font-medium leading-tight text-slate-900 dark:text-slate-200 hover:text-[#D4C4A8] dark:hover:text-[#D4C4A8] group/link text-base"
-                            href={project.link}
-                            target="_blank"
-                          >
-                            <span className="absolute -inset-x-4 -inset-y-2.5 hidden rounded md:-inset-x-6 md:-inset-y-4 lg:block"></span>
-                            <span>
-                              {project.name}{" "}
-                              <ArrowUpRight className="inline-block ml-1 h-4 w-4 shrink-0 transition-transform group-hover/link:-translate-y-1 group-hover/link:translate-x-1" />
-                            </span>
-                          </a>
-                        </h3>
-                        <p className="mt-2 text-sm leading-normal text-slate-500 dark:text-slate-400">
-                          {project.description}
-                        </p>
+                    <a
+                      href={project.link}
+                      target="_blank"
+                      className="group relative block"
+                    >
+                      <div className="relative grid gap-4 pb-1 transition-all sm:grid-cols-8 sm:gap-8 md:gap-4 lg:hover:opacity-100! lg:group-hover/list:opacity-50">
+                        <div className="absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-md transition lg:-inset-x-6 lg:block lg:group-hover:bg-slate-200/50 dark:lg:group-hover:bg-[#ffffff03] lg:group-hover:shadow-[inset_0_1px_0_0_rgba(255,255,255,0.05)]"></div>
+
+                        <div className="z-10 sm:order-2 sm:col-span-6">
+                          <h3 className="inline-flex items-baseline font-medium leading-tight text-slate-900 dark:text-slate-200 hover:text-[#D4C4A8] dark:hover:text-[#D4C4A8] text-base">
+                            {project.name}
+                            <ArrowUpRight className="ml-1 h-4 w-4 shrink-0 transition-transform group-hover:-translate-y-1 group-hover:translate-x-1" />
+                          </h3>
+
+                          <p className="mt-2 text-sm leading-normal text-slate-500 dark:text-slate-400">
+                            {project.description}
+                          </p>
+                        </div>
+
+                        <div className="rounded border border-slate-200 dark:border-white/10 overflow-hidden sm:order-1 sm:col-span-2 sm:translate-y-1 transition-all group-hover:border-[#D4C4A8]/30">
+                          <img
+                            src={project.image}
+                            alt={project.name}
+                            className="h-full w-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
+                          />
+                        </div>
                       </div>
-                      <div className="rounded border border-slate-200 dark:border-white/10 overflow-hidden sm:order-1 sm:col-span-2 sm:translate-y-1 transition-all group-hover:border-[#D4C4A8]/30">
-                        <img
-                          src={project.image}
-                          alt={project.name}
-                          className="h-full w-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
-                        />
-                      </div>
-                    </div>
+                    </a>
                   </li>
                 ))}
               </ul>
             </section>
 
-            <footer className="max-w-md pb-16 text-xs text-slate-400 sm:pb-24">
-              <p>
-                Crafted by Jack. Built with{" "}
-                <span className="text-slate-900 dark:text-[#D4C4A8] font-medium">
-                  React
+            <footer className="mx-auto max-w-md px-6 pb-16 text-xs text-slate-400 sm:pb-24 sm:text-left text-center">
+              <p className="leading-relaxed">
+                Coded in{" "}
+                <span className="font-medium text-slate-900 dark:text-[#D4C4A8]">
+                  Visual Studio Code
                 </span>{" "}
-                and{" "}
-                <span className="text-slate-900 dark:text-[#D4C4A8] font-medium">
+                by yours truly. Built with{" "}
+                <span className="font-medium text-slate-900 dark:text-[#D4C4A8]">
+                  React.js
+                </span>{" "}
+                (powered by Vite) and{" "}
+                <span className="font-medium text-slate-900 dark:text-[#D4C4A8]">
                   Tailwind CSS
+                </span>
+                , deployed with{" "}
+                <span className="font-medium text-slate-900 dark:text-[#D4C4A8]">
+                  Vercel
                 </span>
                 .
               </p>
